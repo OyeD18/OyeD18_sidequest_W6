@@ -22,8 +22,7 @@ export class ParallaxBackground {
    * [
    *   { img: bgFar, factor: 0.2 },
    *   { img: bgMid, factor: 0.5 },
-   *   { img: bgFore, factor: 0.7 },
-   *   { img: bgMFore, factor: 0.9 }
+   *   { img: bgFore, factor: 0.8 }
    * ]
    */
   constructor(layers = []) {
@@ -36,15 +35,13 @@ export class ParallaxBackground {
 
     for (const layer of this.layers) {
       const { img, factor = 1 } = layer;
-      if (!img) continue;
+      if (!img || !img.width) continue;
 
-      const offsetX = -cameraX * factor;
-
-      // tile horizontally
+      // Scroll offset: modulo keeps it in [0, imgW) range for seamless tiling
       const imgW = img.width;
       const offsetX = (((-cameraX * factor) % imgW) + imgW) % imgW;
 
-      // ensure enough tiles to fill width
+      // Start one tile to the left to cover left-scroll gaps
       const startX = offsetX - imgW;
 
       for (let x = startX; x < viewW; x += imgW) {

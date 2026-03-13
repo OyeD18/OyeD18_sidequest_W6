@@ -184,9 +184,6 @@ export class Game {
         this.events.on("player:damaged", () => this.sound.play("hurt")),
       );
       this._unsubs.push(
-        this.events.on("player:jumped", () => this.sound.play("jump")),
-      );
-      this._unsubs.push(
         this.events.on("player:died", () => this.sound.play("die")),
       );
       this._unsubs.push(
@@ -194,6 +191,9 @@ export class Game {
       );
       this._unsubs.push(
         this.events.on("boar:damaged", () => this.sound.play("hit")),
+      );
+      this._unsubs.push(
+        this.events.on("player:jumped", () => this.sound.play("jump")),
       );
     }
 

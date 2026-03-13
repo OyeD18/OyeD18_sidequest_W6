@@ -68,6 +68,7 @@ function unlockAudioOnce() {
   if (audioUnlocked) return;
   audioUnlocked = true;
   if (typeof userStartAudio === "function") userStartAudio();
+  // Start looping music now that the AudioContext is unlocked
   soundManager?.startMusic();
 }
 
@@ -134,6 +135,7 @@ async function boot() {
   // (AudioContext may still be locked until the user clicks/presses a key.)
   soundManager = new SoundManager();
 
+  // Load all SFX
   soundManager.load("leaf", "assets/sfx/collect.wav");
   soundManager.load("hurt", "assets/sfx/receiveDamage.wav");
   soundManager.load("die", "assets/sfx/receiveDamage.wav");
@@ -141,7 +143,9 @@ async function boot() {
   soundManager.load("hit", "assets/sfx/hitEnemy.wav");
   soundManager.load("jump", "assets/sfx/jump.wav");
 
+  // Load and start looping background music (starts after first user gesture)
   soundManager.loadMusic("assets/sfx/music.wav");
+
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
   parallaxLayers = defs

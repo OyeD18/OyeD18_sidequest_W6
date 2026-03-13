@@ -35,6 +35,10 @@ export class SoundManager {
     this._music.loop();
   }
 
+  stopMusic() {
+    if (this._music?.isPlaying()) this._music.stop();
+  }
+
   play(name) {
     this.sfx[name]?.play();
   }
