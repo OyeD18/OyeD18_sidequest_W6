@@ -43,17 +43,17 @@
         "cameraLerp": 0.1,
 
         "parallax": [
-          { "img": "assets/background_layer_1.png", "speed": 0.2 },
-          { "img": "assets/background_layer_2.png", "speed": 0.4 },
-          { "img": "assets/background_layer_3.png", "speed": 0.6 },
-          { "img": "assets/background_layer_4.png", "speed": 0.8 }
+          { "img": "assets/background_layer_1.png", "speed": 0.1 },
+          { "img": "assets/background_layer_2.png", "speed": 0.2 },
+          { "img": "assets/background_layer_3.png", "speed": 0.4 },
+          { "img": "assets/background_layer_4.png", "speed": 0.6 }
         ]
       },
 
       "overrides": {
         "hud": {
-          "rescueLabel": "OBTAINED",
-          "winScoreLabel": "OBTAINED %d/%d"
+          "rescueLabel": "RESCUED",
+          "winScoreLabel": "RESCUED %d/%d"
         }
       }
     }

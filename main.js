@@ -37,7 +37,10 @@ import { LevelLoader } from "./src/LevelLoader.js";
 import { Game } from "./src/Game.js";
 import { ParallaxBackground } from "./src/ParallaxBackground.js";
 import { loadAssets } from "./src/AssetLoader.js";
-import { applyIntegerScale, installResizeHandler } from "./src/utils/IntegerScale.js";
+import {
+  applyIntegerScale,
+  installResizeHandler,
+} from "./src/utils/IntegerScale.js";
 
 import { CameraController } from "./src/CameraController.js";
 import { InputManager } from "./src/InputManager.js";
@@ -65,6 +68,7 @@ function unlockAudioOnce() {
   if (audioUnlocked) return;
   audioUnlocked = true;
   if (typeof userStartAudio === "function") userStartAudio();
+  soundManager?.startMusic();
 }
 
 // Prevent the browser from stealing keys (space/arrows) for scrolling.
@@ -130,6 +134,14 @@ async function boot() {
   // (AudioContext may still be locked until the user clicks/presses a key.)
   soundManager = new SoundManager();
 
+  soundManager.load("leaf", "assets/sfx/collect.wav");
+  soundManager.load("hurt", "assets/sfx/receiveDamage.wav");
+  soundManager.load("die", "assets/sfx/receiveDamage.wav");
+  soundManager.load("win", "assets/sfx/collect.wav");
+  soundManager.load("hit", "assets/sfx/hitEnemy.wav");
+  soundManager.load("jump", "assets/sfx/jump.wav");
+
+  soundManager.loadMusic("assets/sfx/music.wav");
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
   parallaxLayers = defs

@@ -42,10 +42,10 @@ export class ParallaxBackground {
 
       // tile horizontally
       const imgW = img.width;
-      const imgH = img.height;
+      const offsetX = (((-cameraX * factor) % imgW) + imgW) % imgW;
 
       // ensure enough tiles to fill width
-      const startX = Math.floor(offsetX / imgW) * imgW;
+      const startX = offsetX - imgW;
 
       for (let x = startX; x < viewW; x += imgW) {
         image(img, Math.round(x), 0, imgW, viewH);
