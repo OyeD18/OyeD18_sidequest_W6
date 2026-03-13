@@ -71,7 +71,7 @@ export class LeafController {
     // If you later move this into tuning.json, replace these literals.
     g.addAnis({ idle: { w: 32, h: 32, row: 0, frames: 6 } });
 
-    g.w = 10;
+    g.w = 6;
     g.h = 6;
     g.anis.offset.x = 2;
     g.anis.offset.y = -4;

@@ -52,7 +52,7 @@
 
       "overrides": {
         "hud": {
-          "rescueLabel": "RESCUED",
+          "rescueLabel": "COLLECTED",
           "winScoreLabel": "RESCUED %d/%d"
         }
       }
