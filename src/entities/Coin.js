@@ -1,4 +1,4 @@
-// src/entities/Leaf.js
+// src/entities/Coin.js
 // Collectible (WORLD entity).
 //
 // Responsibilities:
