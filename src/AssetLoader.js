@@ -211,7 +211,7 @@ async function loadBackgrounds(levelPkg) {
     bgFar: await loadImageAsync("assets/background_layer_1.png"),
     bgMid: await loadImageAsync("assets/background_layer_2.png"),
     bgFore: await loadImageAsync("assets/background_layer_3.png"),
-    bgFore: await loadImageAsync("assets/background_layer_4.png"),
+    bgMFore: await loadImageAsync("assets/background_layer_4.png"),
   };
 }
 

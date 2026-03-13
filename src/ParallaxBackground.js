@@ -22,7 +22,8 @@ export class ParallaxBackground {
    * [
    *   { img: bgFar, factor: 0.2 },
    *   { img: bgMid, factor: 0.5 },
-   *   { img: bgFore, factor: 0.8 }
+   *   { img: bgFore, factor: 0.7 },
+   *   { img: bgMFore, factor: 0.9 }
    * ]
    */
   constructor(layers = []) {

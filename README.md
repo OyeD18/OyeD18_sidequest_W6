@@ -32,11 +32,18 @@ Learning Goals:
 
 ## Assets
 
-Background Layers: - Background: https://maaot.itch.io/mossy-cavern
+Background Layers:
 
-      Sprites:
-        - knight: https://jumpbutton.itch.io/girlknightasset
-        - goblin: https://luizmelo.itch.io/monsters-creatures-fantasy
+- Background: https://maaot.itch.io/mossy-cavern
+
+Tiles:
+
+- All tiles: https://craftpix.net/freebies/nature-pixel-art-environment-free-assets-pack/
+
+Sprites:
+
+- slime: https://craftpix.net/freebies/free-slime-sprite-sheets-pixel-art/
+- goblin: https://luizmelo.itch.io/monsters-creatures-fantasy
 
 ---
 
