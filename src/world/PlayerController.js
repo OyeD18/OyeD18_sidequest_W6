@@ -41,7 +41,10 @@ export class PlayerController {
     if (!p.dead && p.pendingDeath && grounded) {
       p.dead = true;
       p.pendingDeath = false;
-      this.events?.emit("player:died", { health: p.health, maxHealth: p.maxHealth });
+      this.events?.emit("player:died", {
+        health: p.health,
+        maxHealth: p.maxHealth,
+      });
     }
 
     // if dead or won, freeze horizontal control and just animate
@@ -56,7 +59,13 @@ export class PlayerController {
     // ATTACK start
     // -----------------------
     const wantAttack = input?.attackPressed;
-    if (p.knockTimer === 0 && !p.pendingDeath && grounded && !p.attacking && wantAttack) {
+    if (
+      p.knockTimer === 0 &&
+      !p.pendingDeath &&
+      grounded &&
+      !p.attacking &&
+      wantAttack
+    ) {
       p.startAttack();
       this.events?.emit("player:attacked", {});
     }
