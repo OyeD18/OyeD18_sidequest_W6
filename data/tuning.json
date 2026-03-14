@@ -140,13 +140,13 @@
     "frameH": 32,
 
     "collider": {
-      "w": 6,
+      "w": 10,
       "h": 6
     },
 
     "anisOffset": {
-      "x": 2,
-      "y": -4
+      "x": 0,
+      "y": 0
     },
 
     "anims": {
